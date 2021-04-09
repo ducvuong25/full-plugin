@@ -1,0 +1,35 @@
+<%= link_to "add new Depatment", "/form" %>
+
+<h2>department list</h2>
+<%
+=begin%>
+ <% @departments.each do |dpm| %>
+  <p>
+    <%= dpm.department_name %>
+  </p>
+<% end %> 
+<%
+=end%>
+
+
+<table>
+  <tr>
+    <th>id</th>
+    <th>department_name</th>
+    <th>department_manager_name</th>
+    <th>department_floor</th>
+  </tr>
+  <% @departments.each do |dpm| %>
+    <tr>
+      <td><%= dpm.id %></td>
+      <td><%= dpm.department_name %></td>
+      <td><%= dpm.department_manager_name %></td>
+      <td><%= dpm.department_floor %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'table-style', plugin: 'dpm_manager' %>
+<% end %>

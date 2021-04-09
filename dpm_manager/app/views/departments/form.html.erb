@@ -1,0 +1,16 @@
+<h2>add new department</h2>
+
+
+<%= form_with model: @department do |f| %>
+    <%= f.label :department_name %>:
+    <%= f.text_field :department_name %>
+    
+    <%= f.label :department_manager_name %>:
+    <%= f.text_field :department_manager_name %>
+
+    <%= f.label :department_floor %>:
+    <%= f.number_field :department_floor %>
+
+    <%= f.submit "add" %>
+<% end %>
+
