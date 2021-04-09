@@ -12,3 +12,9 @@ get 'form', to: 'departments#form'
 
 # khi click va nut save
 post 'departments', to: 'departments#departments'
+
+
+match 'deleteDepartment', to: 'departments#delete', via: :get, as: 'delete'
+
+
+match 'updateDepartment', to: 'departments#update', via: :get, as: 'update'

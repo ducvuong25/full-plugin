@@ -6,6 +6,7 @@ class DepartmentsController < ApplicationController
 
   def form
     @department = Department.new
+    @projects = Project.all
   end
 
   def departments
@@ -13,5 +14,17 @@ class DepartmentsController < ApplicationController
     params.permit!
     Department.create(params[:department])
     redirect_to departments_path(project_id: params[:project_id])
+  end
+
+  def delete
+    department = Department.find(params[:dpm_id])  
+    department.destroy
+    redirect_to departments_path(project_id: params[:project_id])
+  end
+
+  def update
+    @department = Department.find(params[:dpm_id])
+    render 'form'
+    
   end
 end
